@@ -7,17 +7,17 @@ Returns: a List of integers
 def sliding_window_max(nums, k):
     # Your code here
     # pass
-    if k > (len(nums)):
-        return -1
-
-    for i in range(len(nums)):
-        print(nums[i:3])
+    return [max(nums[i:i+k])
+            for i in range(len(nums)) if not k > len(nums[i:i+k])]
 
 
 if __name__ == '__main__':
     # Use the main function here to test out your implementation
+    # arr = [1, 3, -1, -3, 5, 3, 6, 7]
+    # k = 3
+
     arr = [1, 3, -1, -3, 5, 3, 6, 7]
-    k = 3
+    k = 2
 
     print(
         f"Output of sliding_window_max function is: {sliding_window_max(arr, k)}")
